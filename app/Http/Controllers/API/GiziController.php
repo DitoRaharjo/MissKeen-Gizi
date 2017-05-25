@@ -18,7 +18,7 @@ class GiziController extends Controller
   }
 
   public function getOne($id) {
-    $responses = Gizi::find($id);
+    $responses = Gizi::where('id', '=', $id)->get();
     return response()->json($responses);
   }
 }
